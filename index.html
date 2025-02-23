@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wifi generateQR </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wifi QR Code Generator</h1>
+        <div class="form-group">
+            <label for="ssid">
+                Network Name:
+            </label>
+            <input type="text" id="ssid" placeholder="Enter Network Name" required>
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" id="password" placeholder="*******" required>
+        </div>
+        <div class="form-group">
+            <label for="encryption">
+                Encryption Type:
+            </label>
+            <select name="" id="encryption">
+                <option value="WPA">WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">No Password</option>
+            </select>
+        </div>
+        <button onclick="generateQR()">Generate QR Code</button>
+        <div id="qrcode">
+            <div id="ssid-display"></div>
+            <div id="qr-image"></div>
+            <button id="print-button" onclick="printQRCode()" style="display: none;">Print QR Code</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
